@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4 # Roboten kopierar din kod
-      - name: Set up JDK 17
+      - name: Set up JDK 24
         uses: actions/setup-java@v4 # Roboten installerar Java
         with:
-          java-version: '17'
+          java-version: '24'
           distribution: 'temurin'
       - name: Run tests
         run: mvn test # Roboten kör dina Cucumber/Selenium-tester!
