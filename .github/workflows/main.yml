@@ -1,0 +1,21 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "master" ] # Eller "main" beroende på vad din gren heter
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Detta är molndatorn roboten använder
+
+    steps:
+      - uses: actions/checkout@v4 # Roboten kopierar din kod
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4 # Roboten installerar Java
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Run tests
+        run: mvn test # Roboten kör dina Cucumber/Selenium-tester!

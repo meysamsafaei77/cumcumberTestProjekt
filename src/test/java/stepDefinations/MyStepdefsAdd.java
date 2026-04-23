@@ -23,6 +23,7 @@ public class MyStepdefsAdd {
     // Körs innan varje testfall startar
     @Before
     public void setUp() {
+
         System.out.println("Stet up is worked");
     }
 
@@ -47,6 +48,7 @@ public class MyStepdefsAdd {
         // Letar upp och klickar på godkänn-knappen (fungerar på både svenska och engelska)
         WebElement consentButton = driver.findElement(By.xpath("//*[contains(text(),'Jag samtycker') or contains(text(),'Consent')]"));
         consentButton.click();
+
     }
 
     // Hittar det första fältet och skriver in det första talet
@@ -80,12 +82,11 @@ public class MyStepdefsAdd {
     // Körs automatiskt när testfallet är klart
     @After
     public void tearDown() {
-        if (driver != null) {
+        /*if (driver != null) {
             // Här ska vi skriva kommandot för att stänga ner
-            driver.quit();
+
             System.out.println("Stänger webbläsaren...");
-
-        }
+        }*/
+        driver.quit();
     }
-
 }
